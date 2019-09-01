@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require ts-node/register --watch-extensions [ts] ./**/*.test.ts"
+    "test": "mocha --require ts-node/register --watch-extensions ts ./**/*.test.ts",
+    "test:watch": "npm test -- --watch"
   },
   "author": "Andrew Allbright",
   "license": "MIT",

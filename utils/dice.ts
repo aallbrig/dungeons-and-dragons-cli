@@ -1,21 +1,29 @@
-import { curry } from 'lodash';
+import { curry, random } from 'lodash';
+
 interface Dice {
     roll: () => number
 }
-const getRandomValueBetween = curry((start:number, end:number) => () => start + Math.ceil(Math.random() * end));
-const getRandomValueBetweenZeroAnd = getRandomValueBetween(0);
+const getRandomValueBetween = curry((start:number, end:number) => () => random(start, end));
+const getRandomValueBetweenOneAnd = getRandomValueBetween(1);
+
 export const D4:Dice = {
-    roll: getRandomValueBetweenZeroAnd(4)
+    roll: getRandomValueBetweenOneAnd(4)
 };
 export const D6:Dice = {
-    roll: getRandomValueBetweenZeroAnd(6)
+    roll: getRandomValueBetweenOneAnd(6)
+};
+export const D8:Dice = {
+    roll: getRandomValueBetweenOneAnd(8)
 };
 export const D10:Dice = {
-    roll: getRandomValueBetweenZeroAnd(10)
+    roll: getRandomValueBetweenOneAnd(10)
 };
 export const D12:Dice = {
-    roll: getRandomValueBetweenZeroAnd(12)
+    roll: getRandomValueBetweenOneAnd(12)
 };
 export const D20:Dice = {
-    roll: getRandomValueBetweenZeroAnd(20)
+    roll: getRandomValueBetweenOneAnd(20)
+};
+export const D100:Dice = {
+    roll: () => D10.roll() * 10
 };
