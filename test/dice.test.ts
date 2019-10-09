@@ -49,7 +49,7 @@ describe('Dice', () => {
     describe('D100', () => {
         it(
             'should return a number between 10 and 100, incremented by 10',
-            testDice(inclusiveRange(10, 10, 100), D100.roll())
+            testDice(inclusiveRangeBetweenOneAnd(100), D100.roll())
         )
     });
 });
