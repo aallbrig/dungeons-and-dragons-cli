@@ -1,10 +1,10 @@
 import { testPrompt } from "../inquirer/prompts";
 import { debugLog, progLog } from "../utils/loggers";
 
-export const rollAction = async (listOfDice:string) => {
+export const rollAction = async (serializedListOfDice:string) => {
   debugLog('roll command called!');
-  debugLog(`variable listOfDice value: ${listOfDice}`);
-  if (listOfDice) {
+  debugLog(`variable serializedListOfDice value: ${serializedListOfDice}`);
+  if (serializedListOfDice) {
     progLog('TODO: validate user input');
     progLog('user input should be a list of dice e.g. "d4" or "d4,d6,d8,d10,d20,d100" or "d4,d4,d4"');
   } else {
